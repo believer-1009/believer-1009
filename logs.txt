@@ -1,0 +1,265 @@
+2025-01-20T10:21:01.152086093Z [2025-01-20 10:21:01 +0000] [1] [INFO] Starting gunicorn 23.0.0
+2025-01-20T10:21:01.152286009Z [2025-01-20 10:21:01 +0000] [1] [INFO] Listening at: http://0.0.0.0:3900 (1)
+2025-01-20T10:21:01.152298593Z [2025-01-20 10:21:01 +0000] [1] [INFO] Using worker: uvicorn.workers.UvicornWorker
+2025-01-20T10:21:01.155301176Z [2025-01-20 10:21:01 +0000] [7] [INFO] Booting worker with pid: 7
+2025-01-20T10:21:01.189641009Z [2025-01-20 10:21:01 +0000] [8] [INFO] Booting worker with pid: 8
+2025-01-20T10:21:01.203366051Z [2025-01-20 10:21:01 +0000] [9] [INFO] Booting worker with pid: 9
+2025-01-20T10:21:01.211381176Z [2025-01-20 10:21:01 +0000] [10] [INFO] Booting worker with pid: 10
+2025-01-20T10:21:01.289357884Z [2025-01-20 10:21:01 +0000] [11] [INFO] Booting worker with pid: 11
+2025-01-20T10:21:05.656125387Z [2025-01-20 10:21:05 +0000] [10] [ERROR] Exception in worker process
+2025-01-20T10:21:05.656161303Z Traceback (most recent call last):
+2025-01-20T10:21:05.656163345Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+2025-01-20T10:21:05.656164553Z     worker.init_process()
+2025-01-20T10:21:05.656165387Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/uvicorn/workers.py", line 75, in init_process
+2025-01-20T10:21:05.656166387Z     super().init_process()
+2025-01-20T10:21:05.656167220Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 135, in init_process
+2025-01-20T10:21:05.656168137Z     self.load_wsgi()
+2025-01-20T10:21:05.656169095Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+2025-01-20T10:21:05.656170262Z     self.wsgi = self.app.wsgi()
+2025-01-20T10:21:05.656171095Z                 ^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.656171845Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2025-01-20T10:21:05.656173012Z     self.callable = self.load()
+2025-01-20T10:21:05.656173762Z                     ^^^^^^^^^^^
+2025-01-20T10:21:05.656174470Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+2025-01-20T10:21:05.656175387Z     return self.load_wsgiapp()
+2025-01-20T10:21:05.656176387Z            ^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.656177137Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+2025-01-20T10:21:05.656178012Z     return util.import_app(self.app_uri)
+2025-01-20T10:21:05.656179137Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.656179928Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 370, in import_app
+2025-01-20T10:21:05.656181012Z     mod = importlib.import_module(module)
+2025-01-20T10:21:05.656181803Z           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.656204637Z   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-01-20T10:21:05.656205887Z     return _bootstrap._gcd_import(name[level:], package, level)
+2025-01-20T10:21:05.656206720Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.656207553Z   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2025-01-20T10:21:05.656208762Z   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2025-01-20T10:21:05.656209762Z   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+2025-01-20T10:21:05.656210595Z   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-01-20T10:21:05.656211428Z   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-01-20T10:21:05.656212345Z   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-01-20T10:21:05.656214053Z   File "/app/main.py", line 21, in <module>
+2025-01-20T10:21:05.656215178Z     from chain.react_agent_graph import ReactAgentGraph
+2025-01-20T10:21:05.656216095Z   File "/app/chain/react_agent_graph.py", line 22, in <module>
+2025-01-20T10:21:05.656216970Z     from chain.base import BaseChainExecutor
+2025-01-20T10:21:05.656217762Z   File "/app/chain/base.py", line 9, in <module>
+2025-01-20T10:21:05.656218720Z     from utils.retriever_tools import RetrieverFactory
+2025-01-20T10:21:05.656219512Z   File "/app/utils/retriever_tools.py", line 22, in <module>
+2025-01-20T10:21:05.656220595Z     from dependencies import (
+2025-01-20T10:21:05.656221345Z   File "/app/dependencies.py", line 44, in <module>
+2025-01-20T10:21:05.656222345Z     settings.validators.validate()
+2025-01-20T10:21:05.656223428Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 492, in validate
+2025-01-20T10:21:05.656224428Z     validator.validate(
+2025-01-20T10:21:05.656225220Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 217, in validate
+2025-01-20T10:21:05.656226178Z     self._validate_items(
+2025-01-20T10:21:05.656226970Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 280, in _validate_items
+2025-01-20T10:21:05.656227845Z     raise ValidationError(_message, details=[(self, _message)])
+2025-01-20T10:21:05.656228678Z dynaconf.validator.ValidationError: OPENAI_API_KEY is required in env main
+2025-01-20T10:21:05.656229637Z [2025-01-20 10:21:05 +0000] [10] [INFO] Worker exiting (pid: 10)
+2025-01-20T10:21:05.675165053Z [2025-01-20 10:21:05 +0000] [9] [ERROR] Exception in worker process
+2025-01-20T10:21:05.675200637Z Traceback (most recent call last):
+2025-01-20T10:21:05.675202470Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+2025-01-20T10:21:05.675222303Z     worker.init_process()
+2025-01-20T10:21:05.675223345Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/uvicorn/workers.py", line 75, in init_process
+2025-01-20T10:21:05.675224303Z     super().init_process()
+2025-01-20T10:21:05.675225095Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 135, in init_process
+2025-01-20T10:21:05.675226178Z     self.load_wsgi()
+2025-01-20T10:21:05.675227053Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+2025-01-20T10:21:05.675228053Z     self.wsgi = self.app.wsgi()
+2025-01-20T10:21:05.675228803Z                 ^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.675229553Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2025-01-20T10:21:05.675230470Z     self.callable = self.load()
+2025-01-20T10:21:05.675231262Z                     ^^^^^^^^^^^
+2025-01-20T10:21:05.675231970Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+2025-01-20T10:21:05.675232845Z     return self.load_wsgiapp()
+2025-01-20T10:21:05.675233595Z            ^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.675234303Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+2025-01-20T10:21:05.675235220Z     return util.import_app(self.app_uri)
+2025-01-20T10:21:05.675236012Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.675236803Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 370, in import_app
+2025-01-20T10:21:05.675237637Z     mod = importlib.import_module(module)
+2025-01-20T10:21:05.675238595Z           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.675239553Z   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-01-20T10:21:05.675240428Z     return _bootstrap._gcd_import(name[level:], package, level)
+2025-01-20T10:21:05.675241262Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.675242178Z   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2025-01-20T10:21:05.675243470Z   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2025-01-20T10:21:05.675244345Z   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+2025-01-20T10:21:05.675245345Z   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-01-20T10:21:05.675246137Z   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-01-20T10:21:05.675247220Z   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-01-20T10:21:05.675249637Z   File "/app/main.py", line 21, in <module>
+2025-01-20T10:21:05.675250553Z     from chain.react_agent_graph import ReactAgentGraph
+2025-01-20T10:21:05.675251303Z   File "/app/chain/react_agent_graph.py", line 22, in <module>
+2025-01-20T10:21:05.675252178Z     from chain.base import BaseChainExecutor
+2025-01-20T10:21:05.675252928Z   File "/app/chain/base.py", line 9, in <module>
+2025-01-20T10:21:05.675253762Z     from utils.retriever_tools import RetrieverFactory
+2025-01-20T10:21:05.675254512Z   File "/app/utils/retriever_tools.py", line 22, in <module>
+2025-01-20T10:21:05.675255387Z     from dependencies import (
+2025-01-20T10:21:05.675256303Z   File "/app/dependencies.py", line 44, in <module>
+2025-01-20T10:21:05.675257095Z     settings.validators.validate()
+2025-01-20T10:21:05.675258053Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 492, in validate
+2025-01-20T10:21:05.675259303Z     validator.validate(
+2025-01-20T10:21:05.675260095Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 217, in validate
+2025-01-20T10:21:05.675261137Z     self._validate_items(
+2025-01-20T10:21:05.675261887Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 280, in _validate_items
+2025-01-20T10:21:05.675262762Z     raise ValidationError(_message, details=[(self, _message)])
+2025-01-20T10:21:05.675263553Z dynaconf.validator.ValidationError: OPENAI_API_KEY is required in env main
+2025-01-20T10:21:05.675264387Z [2025-01-20 10:21:05 +0000] [9] [INFO] Worker exiting (pid: 9)
+2025-01-20T10:21:05.679314387Z [2025-01-20 10:21:05 +0000] [8] [ERROR] Exception in worker process
+2025-01-20T10:21:05.679337178Z Traceback (most recent call last):
+2025-01-20T10:21:05.679338095Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+2025-01-20T10:21:05.679339178Z     worker.init_process()
+2025-01-20T10:21:05.679340178Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/uvicorn/workers.py", line 75, in init_process
+2025-01-20T10:21:05.679341053Z     super().init_process()
+2025-01-20T10:21:05.679341803Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 135, in init_process
+2025-01-20T10:21:05.679342678Z     self.load_wsgi()
+2025-01-20T10:21:05.679343428Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+2025-01-20T10:21:05.679349762Z     self.wsgi = self.app.wsgi()
+2025-01-20T10:21:05.679350553Z                 ^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.679351262Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2025-01-20T10:21:05.679352178Z     self.callable = self.load()
+2025-01-20T10:21:05.679359012Z                     ^^^^^^^^^^^
+2025-01-20T10:21:05.679359762Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+2025-01-20T10:21:05.679360637Z     return self.load_wsgiapp()
+2025-01-20T10:21:05.679361387Z            ^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.679362095Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+2025-01-20T10:21:05.679362970Z     return util.import_app(self.app_uri)
+2025-01-20T10:21:05.679363762Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.679364512Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 370, in import_app
+2025-01-20T10:21:05.679365345Z     mod = importlib.import_module(module)
+2025-01-20T10:21:05.679366095Z           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.679366845Z   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-01-20T10:21:05.679367720Z     return _bootstrap._gcd_import(name[level:], package, level)
+2025-01-20T10:21:05.679368512Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.679369262Z   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2025-01-20T10:21:05.679370428Z   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2025-01-20T10:21:05.679371262Z   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+2025-01-20T10:21:05.679372095Z   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-01-20T10:21:05.679372928Z   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-01-20T10:21:05.679373762Z   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-01-20T10:21:05.679375345Z   File "/app/main.py", line 21, in <module>
+2025-01-20T10:21:05.679376137Z     from chain.react_agent_graph import ReactAgentGraph
+2025-01-20T10:21:05.679376887Z   File "/app/chain/react_agent_graph.py", line 22, in <module>
+2025-01-20T10:21:05.679377720Z     from chain.base import BaseChainExecutor
+2025-01-20T10:21:05.679378512Z   File "/app/chain/base.py", line 9, in <module>
+2025-01-20T10:21:05.679379345Z     from utils.retriever_tools import RetrieverFactory
+2025-01-20T10:21:05.679380095Z   File "/app/utils/retriever_tools.py", line 22, in <module>
+2025-01-20T10:21:05.679380928Z     from dependencies import (
+2025-01-20T10:21:05.679381637Z   File "/app/dependencies.py", line 44, in <module>
+2025-01-20T10:21:05.679382470Z     settings.validators.validate()
+2025-01-20T10:21:05.679383220Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 492, in validate
+2025-01-20T10:21:05.679385053Z     validator.validate(
+2025-01-20T10:21:05.679385845Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 217, in validate
+2025-01-20T10:21:05.679386720Z     self._validate_items(
+2025-01-20T10:21:05.679387470Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 280, in _validate_items
+2025-01-20T10:21:05.679388345Z     raise ValidationError(_message, details=[(self, _message)])
+2025-01-20T10:21:05.679389137Z dynaconf.validator.ValidationError: OPENAI_API_KEY is required in env main
+2025-01-20T10:21:05.679631053Z [2025-01-20 10:21:05 +0000] [8] [INFO] Worker exiting (pid: 8)
+2025-01-20T10:21:05.691338595Z [2025-01-20 10:21:05 +0000] [7] [ERROR] Exception in worker process
+2025-01-20T10:21:05.691374803Z Traceback (most recent call last):
+2025-01-20T10:21:05.691376262Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+2025-01-20T10:21:05.691377345Z     worker.init_process()
+2025-01-20T10:21:05.691378137Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/uvicorn/workers.py", line 75, in init_process
+2025-01-20T10:21:05.691379053Z     super().init_process()
+2025-01-20T10:21:05.691379845Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 135, in init_process
+2025-01-20T10:21:05.691380762Z     self.load_wsgi()
+2025-01-20T10:21:05.691381553Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+2025-01-20T10:21:05.691382470Z     self.wsgi = self.app.wsgi()
+2025-01-20T10:21:05.691383220Z                 ^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.691384012Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2025-01-20T10:21:05.691384887Z     self.callable = self.load()
+2025-01-20T10:21:05.691385637Z                     ^^^^^^^^^^^
+2025-01-20T10:21:05.691386345Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+2025-01-20T10:21:05.691387220Z     return self.load_wsgiapp()
+2025-01-20T10:21:05.691388012Z            ^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.691388803Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+2025-01-20T10:21:05.691389678Z     return util.import_app(self.app_uri)
+2025-01-20T10:21:05.691390428Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.691391178Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 370, in import_app
+2025-01-20T10:21:05.691392095Z     mod = importlib.import_module(module)
+2025-01-20T10:21:05.691392845Z           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.691415512Z   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-01-20T10:21:05.691416678Z     return _bootstrap._gcd_import(name[level:], package, level)
+2025-01-20T10:21:05.691417512Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.691418345Z   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2025-01-20T10:21:05.691419387Z   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2025-01-20T10:21:05.691420262Z   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+2025-01-20T10:21:05.691421137Z   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-01-20T10:21:05.691421970Z   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-01-20T10:21:05.691422887Z   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-01-20T10:21:05.691424512Z   File "/app/main.py", line 21, in <module>
+2025-01-20T10:21:05.691425387Z     from chain.react_agent_graph import ReactAgentGraph
+2025-01-20T10:21:05.691426178Z   File "/app/chain/react_agent_graph.py", line 22, in <module>
+2025-01-20T10:21:05.691426970Z     from chain.base import BaseChainExecutor
+2025-01-20T10:21:05.691427762Z   File "/app/chain/base.py", line 9, in <module>
+2025-01-20T10:21:05.691428595Z     from utils.retriever_tools import RetrieverFactory
+2025-01-20T10:21:05.691429345Z   File "/app/utils/retriever_tools.py", line 22, in <module>
+2025-01-20T10:21:05.691430178Z     from dependencies import (
+2025-01-20T10:21:05.691430928Z   File "/app/dependencies.py", line 44, in <module>
+2025-01-20T10:21:05.691431720Z     settings.validators.validate()
+2025-01-20T10:21:05.691432470Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 492, in validate
+2025-01-20T10:21:05.691433345Z     validator.validate(
+2025-01-20T10:21:05.691434095Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 217, in validate
+2025-01-20T10:21:05.691434928Z     self._validate_items(
+2025-01-20T10:21:05.691435678Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 280, in _validate_items
+2025-01-20T10:21:05.691436553Z     raise ValidationError(_message, details=[(self, _message)])
+2025-01-20T10:21:05.691437387Z dynaconf.validator.ValidationError: OPENAI_API_KEY is required in env main
+2025-01-20T10:21:05.691438178Z [2025-01-20 10:21:05 +0000] [7] [INFO] Worker exiting (pid: 7)
+2025-01-20T10:21:05.774189387Z [2025-01-20 10:21:05 +0000] [11] [ERROR] Exception in worker process
+2025-01-20T10:21:05.774217887Z Traceback (most recent call last):
+2025-01-20T10:21:05.774219470Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+2025-01-20T10:21:05.774226678Z     worker.init_process()
+2025-01-20T10:21:05.774227470Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/uvicorn/workers.py", line 75, in init_process
+2025-01-20T10:21:05.774228387Z     super().init_process()
+2025-01-20T10:21:05.774229178Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 135, in init_process
+2025-01-20T10:21:05.774230095Z     self.load_wsgi()
+2025-01-20T10:21:05.774230970Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+2025-01-20T10:21:05.774231845Z     self.wsgi = self.app.wsgi()
+2025-01-20T10:21:05.774232595Z                 ^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.774233387Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2025-01-20T10:21:05.774234262Z     self.callable = self.load()
+2025-01-20T10:21:05.774235220Z                     ^^^^^^^^^^^
+2025-01-20T10:21:05.774235928Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+2025-01-20T10:21:05.774236845Z     return self.load_wsgiapp()
+2025-01-20T10:21:05.774237678Z            ^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.774238387Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+2025-01-20T10:21:05.774239262Z     return util.import_app(self.app_uri)
+2025-01-20T10:21:05.774240095Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.774242428Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 370, in import_app
+2025-01-20T10:21:05.774243345Z     mod = importlib.import_module(module)
+2025-01-20T10:21:05.774244095Z           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.774244887Z   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-01-20T10:21:05.774245720Z     return _bootstrap._gcd_import(name[level:], package, level)
+2025-01-20T10:21:05.774246553Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-01-20T10:21:05.774247345Z   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2025-01-20T10:21:05.774248470Z   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2025-01-20T10:21:05.774249303Z   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+2025-01-20T10:21:05.774250178Z   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-01-20T10:21:05.774251012Z   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-01-20T10:21:05.774251887Z   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-01-20T10:21:05.774253387Z   File "/app/main.py", line 21, in <module>
+2025-01-20T10:21:05.774255137Z     from chain.react_agent_graph import ReactAgentGraph
+2025-01-20T10:21:05.774255928Z   File "/app/chain/react_agent_graph.py", line 22, in <module>
+2025-01-20T10:21:05.774256845Z     from chain.base import BaseChainExecutor
+2025-01-20T10:21:05.774257595Z   File "/app/chain/base.py", line 9, in <module>
+2025-01-20T10:21:05.774258428Z     from utils.retriever_tools import RetrieverFactory
+2025-01-20T10:21:05.774259220Z   File "/app/utils/retriever_tools.py", line 22, in <module>
+2025-01-20T10:21:05.774260053Z     from dependencies import (
+2025-01-20T10:21:05.774260803Z   File "/app/dependencies.py", line 44, in <module>
+2025-01-20T10:21:05.774261595Z     settings.validators.validate()
+2025-01-20T10:21:05.774262512Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 492, in validate
+2025-01-20T10:21:05.774263720Z     validator.validate(
+2025-01-20T10:21:05.774264470Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 217, in validate
+2025-01-20T10:21:05.774265387Z     self._validate_items(
+2025-01-20T10:21:05.774266262Z   File "/opt/pysetup/.venv/lib/python3.11/site-packages/dynaconf/validator.py", line 280, in _validate_items
+2025-01-20T10:21:05.774267137Z     raise ValidationError(_message, details=[(self, _message)])
+2025-01-20T10:21:05.774267928Z dynaconf.validator.ValidationError: OPENAI_API_KEY is required in env main
+2025-01-20T10:21:05.774268720Z [2025-01-20 10:21:05 +0000] [11] [INFO] Worker exiting (pid: 11)
+2025-01-20T10:21:06.196592387Z [2025-01-20 10:21:06 +0000] [1] [ERROR] Worker (pid:10) exited with code 3
+2025-01-20T10:21:06.205734678Z [2025-01-20 10:21:06 +0000] [1] [ERROR] Worker (pid:8) was sent SIGTERM!
+2025-01-20T10:21:06.206325762Z [2025-01-20 10:21:06 +0000] [1] [ERROR] Worker (pid:7) was sent SIGTERM!
+2025-01-20T10:21:06.206457387Z [2025-01-20 10:21:06 +0000] [1] [ERROR] Worker (pid:9) was sent SIGTERM!
+2025-01-20T10:21:06.208426262Z [2025-01-20 10:21:06 +0000] [1] [ERROR] Worker (pid:11) was sent SIGTERM!
+2025-01-20T10:21:06.306374387Z [2025-01-20 10:21:06 +0000] [1] [ERROR] Shutting down: Master
+2025-01-20T10:21:06.306392220Z [2025-01-20 10:21:06 +0000] [1] [ERROR] Reason: Worker failed to boot.
